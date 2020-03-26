@@ -33,7 +33,7 @@ class QueryBuilder extends Builder
     {
         $query = $this->toBase();
 
-        $query->where($this->model->getKeyName(), '=', $id);
+        $query->where($this->model->getTable(). '.' .$this->model->getKeyName(), '=', $id);
 
         $data = $query->first([ $this->model->getLftName(),
                                 $this->model->getRgtName() ]);
