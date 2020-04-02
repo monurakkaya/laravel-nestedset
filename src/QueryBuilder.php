@@ -97,6 +97,7 @@ class QueryBuilder extends Builder
         } else {
             $valueQuery = $this->model
                 ->newQuery()
+                ->withOutGlobalScopes()
                 ->toBase()
                 ->select("_.".$this->model->getRgtName())
                 ->from($this->model->getTable().' as _')

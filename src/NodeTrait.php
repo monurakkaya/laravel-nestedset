@@ -698,6 +698,7 @@ trait NodeTrait
      */
     public function applyNestedSetScope($query, $table = null)
     {
+        $query->withoutGlobalScopes();
         if ( ! $scoped = $this->getScopeAttributes()) {
             return $query;
         }
